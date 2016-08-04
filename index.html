@@ -51,7 +51,7 @@
 	<section id="slider">
 		<div class="container">
 			<div class="row">
-				<h5>BOOST UP YOUR</h5>
+				<h4>BOOST UP YOUR</h4>
 				<h1>LOCAL BUSINESS</h1>
 			</div>
 			<div class="row">
@@ -59,15 +59,75 @@
 			</div>
 			<div class="row subscribeNow">
 				<div class="col-md-12">
-					<span>SIGN UP</span>
-					<h3>NEWSLETTER </h3>
-					:	<input type="text" placeholder="NAME">
-						<input type="text" placeholder="EMAIL ADDRESS">
-					<button class="btn btn-warning">SUBSCRIBE NOW</button>
+					<div class="col-md-3">
+						<span>SIGN UP</span>
+						<h3>NEWSLETTER </h3>
+					</div>
+					<div class="col-md-8">
+						<input type="text" placeholder="NAME" class="col-md-6">
+						<input type="text" placeholder="EMAIL ADDRESS" class="col-md-6">
+					</div>
+					<div class="col-md-1">
+						<button class="btn btn-warning">SUBSCRIBE NOW</button>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="container-fluid">
+			<div class="leftArrow pull-left">
+				<i class="fa fa-arrow-left fa-5x" aria-hidden="true" onclick="prev()"></i>
+			</div>
+			<div class="rightArrow pull-right">
+				<i class="fa fa-arrow-right fa-5x" aria-hidden="true" onclick="next()"></i>
+			</div>
+		</div>
 	</section><!-- slider ending -->
+
+	<script>
+		
+		var imgArr = ["images/focus_00.jpg","images/intra.jpg","images/kluki.jpg","images/snow.jpg"]
+		var hFArr = ["BOOST UP YOUR","LOREM INTRA","LOREM KLUKI","LOREM SNOW"]
+		var hWArr = ["LOCAL BUSINESS" , "LOCAL INTNESS","LOCAL KLUKNESS","LOCAL SNONESSK"]
+		var btnArr = ["CONTACT US","LOREM CONTACT","SIT CONTACT","AMET CONTNESS"]
+
+		var defaultBgImg = document.getElementById('slider')
+		defaultBgImg.style.backgroundImage = "url("+imgArr[0]+")"
+
+		var defaulthF = document.getElementById('slider').querySelector('h4')
+		defaulthF.innerHTML=hFArr[0]
+
+		var defaulthW = document.getElementById('slider').querySelector('h1')
+		defaulthW.innerHTML=hWArr[0]
+
+		a = 0
+
+		function prev(){
+			a--;
+			if(a<0){
+				a = imgArr.length - 1
+			}
+			defaultBgImg.style.backgroundImage = "url("+imgArr[a]+")"
+			defaulthF.innerHTML=hFArr[a]
+			defaulthW.innerHTML=hWArr[a]
+
+			console.log(a)
+		}
+		function next(){
+			a++;
+			if(a > imgArr.length-1){
+				a=0;
+			}
+			defaultBgImg.style.backgroundImage = "url("+imgArr[a]+")"
+			defaulthF.innerHTML=hFArr[a]
+			defaulthW.innerHTML=hWArr[a]
+			console.log(a)
+		}
+
+
+
+
+
+	</script>	
 
 	<section id="infoUs">
 		<div class="container-fluid">
