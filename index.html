@@ -55,22 +55,7 @@
 				<h1>LOCAL BUSINESS</h1>
 			</div>
 			<div class="row">
-				<button class="btn btn-info">CONTACT US</button>
-			</div>
-			<div class="row subscribeNow">
-				<div class="col-md-12">
-					<div class="col-md-3">
-						<span>SIGN UP</span>
-						<h3>NEWSLETTER </h3>
-					</div>
-					<div class="col-md-8">
-						<input type="text" placeholder="NAME" class="col-md-6">
-						<input type="text" placeholder="EMAIL ADDRESS" class="col-md-6">
-					</div>
-					<div class="col-md-1">
-						<button class="btn btn-warning">SUBSCRIBE NOW</button>
-					</div>
-				</div>
+				<button class="btn btn-info"></button>
 			</div>
 		</div>
 		<div class="container-fluid">
@@ -88,7 +73,7 @@
 		var imgArr = ["images/focus_00.jpg","images/intra.jpg","images/kluki.jpg","images/snow.jpg"]
 		var hFArr = ["BOOST UP YOUR","LOREM INTRA","LOREM KLUKI","LOREM SNOW"]
 		var hWArr = ["LOCAL BUSINESS" , "LOCAL INTNESS","LOCAL KLUKNESS","LOCAL SNONESSK"]
-		var btnArr = ["CONTACT US","LOREM CONTACT","SIT CONTACT","AMET CONTNESS"]
+		var btnArr = ["LOREM CONTACT","LOREM CONTACT","SIT CONTACT","AMET CONTNESS"]
 
 		var defaultBgImg = document.getElementById('slider')
 		defaultBgImg.style.backgroundImage = "url("+imgArr[0]+")"
@@ -98,6 +83,9 @@
 
 		var defaulthW = document.getElementById('slider').querySelector('h1')
 		defaulthW.innerHTML=hWArr[0]
+
+		var defaultBtn = document.getElementById('slider').getElementsByTagName('button')[0]
+		defaultBtn.innerText = btnArr[0]
 
 		a = 0
 
@@ -109,7 +97,7 @@
 			defaultBgImg.style.backgroundImage = "url("+imgArr[a]+")"
 			defaulthF.innerHTML=hFArr[a]
 			defaulthW.innerHTML=hWArr[a]
-
+			defaultBtn.innerText = btnArr[a]
 			console.log(a)
 		}
 		function next(){
@@ -120,13 +108,9 @@
 			defaultBgImg.style.backgroundImage = "url("+imgArr[a]+")"
 			defaulthF.innerHTML=hFArr[a]
 			defaulthW.innerHTML=hWArr[a]
+			defaultBtn.innerText = btnArr[a]
 			console.log(a)
 		}
-
-
-
-
-
 	</script>	
 
 	<section id="infoUs">
@@ -238,34 +222,56 @@
 				<div class="row text-center">
 					<i class="fa fa-quote-left" aria-hidden="true"></i>
 				</div>
-					<div class="pull-left">
+				<div class="row">
+					<div class="pull-left col-md-off-set-2 col-md-2">
 						<i class="fa fa-quote-left" aria-hidden="true"></i>
 					</div>
-					<div class="text-center" >
-						<p>Lorem Ipsum is simply dummy text of the printing and typesettin Lorem Ipsum is simply dummy text of the printing and typesettin Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+					<div class="text-center col-md-8" >
+						<p>Lorem Ipsum is simply dummy text of the printing and typesettin Lorem Ipsum is simply dummy text of the printing and typesettin Lorem Ipsum is simply dummy text of the printing and typesettin the printing and typesettin Lorem Ipsum is simply dummy text of the printing and typesettin</p>
 					</div>
-					<div class="pull-right">
+					<div class="col-md-12 text-right">
 						<i class="fa fa-quote-right" aria-hidden="true"></i>
 					</div>
+				</div>
 				<div class="row  text-center">
 					<span>BY<br><b>Sunitha Danial</b></span>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<img src="images/bullet_00.jpg" alt="bullet">
 					<img src="images/bullet_00.jpg" alt="bullet">
 					<img src="images/bullet_00.jpg" alt="bullet">
 					<img src="images/bullet_00.jpg" alt="bullet">
 					<img src="images/bullet_00.jpg" alt="bullet">
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section><!-- clients ending -->
 
+	<script>
+		
+		var loopText = document.getElementById('clients').getElementsByClassName('col-md-8')[0].querySelector('p')
+
+		var textArr = ["A severe mental illness abruptly ended Trott's Test career at the age of 31. After a series of seizures in 1898, he suffered from insomnia, apathy, and memory loss. Failing to recover lucidity, he was committed to a psychiatric hospital for over a year."," After his retirement, Trott served as a selector for Victoria for a number of years. Outside of cricket, he worked as a postman and mail sorter. He died of cancer in 1917, aged 51.","Born in Collingwood, an inner suburb of Melbourne, Trott was the third of eight children born to accountant Adolphus Trott and his wife Mary-Ann His younger brother Albert also became a Test cricketer.","Andrew Stoddart led an English team to Australia in 1894–95 to defend The Ashes. A feature of the summer was the emergence of Albert Trott and the performance of the brothers in tandem. Playing for Victoria against the touring side, the Trotts claimed twelve wickets and held eight catches between them"]
+
+		a = 0
+		var looper = setInterval(function(){
+
+			loopText.innerText=textArr[a++]
+			loopText.innerText.dir = "rtl"
+			if(a>textArr.length-1){
+				a=0;
+			}
+		},3000)
+
+
+
+	</script>
+
 	<section id="pricing">
 		<div class="container">
-			<div class="row">
-				<h1>PRICING</h1>
-				<h6>SOME OF OUR FEATURES</h6>
+			<div class="row pricingHeader">
+				<span>PRICING</span>
+				<h3>SOME OF OUR FEATURES</h3>
 			</div>
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-6">
